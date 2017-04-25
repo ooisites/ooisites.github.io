@@ -1,27 +1,9 @@
-<!doctype html>
+---
+layout: default
+---
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>OOI Sites</title>
-  <meta name="description" content="A log of my Github Pages sites">
-  <meta name="author" content="Vincent Ooi">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-  <script>
-  {% for post in site.posts %}	
-    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-    <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} . <a href="http://ooisites.github.com{{ post.url }}#disqus_thread"></a></small></p>			
-  {% endfor %}	
-  </script>
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+<div class="blog-index">  
+  {% assign post = site.posts.first %}
+  {% assign content = post.content %}
+  {% include post_detail.html %}
+</div>
