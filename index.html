@@ -5,8 +5,9 @@ layout: default
 <ul>
   {% for post in site.posts %}
     <li>
-      <a href="{{ post.title }}">{{ post.title }}</a>
-      {{ content }}
+      <a href="{{ post.title | remove_first:'/' }}">{{ post.title }}</a>
+      <div class="postDate">{{ post.date | date:"%B %d, %Y" }}</div>
+      <div class="postContent">{{ post.content }}</div>
     </li>
   {% endfor %}
 </ul>
